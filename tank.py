@@ -51,9 +51,9 @@ class tank(Sprite):
     def draw(self, surface):
         rotated_image1 = pygame.transform.rotate(self.image1, -self.angle*180.0 / pi)
         rotated_image2 = pygame.transform.rotate(self.image2, -self.turret_angle*180.0 / pi)
-        rotated_rect1 = rotated_image1.get_rect()
-        rotated_rect2 = rotated_image2.get_rect()
-        rotated_rect1.center = self.position
-        rotated_rect2.center = self.position
-        surface.blit(rotated_image1, rotated_rect1)
-        surface.blit(rotated_image2, rotated_rect2)
+        self.rect1 = rotated_image1.get_rect()
+        self.rect2 = rotated_image2.get_rect()
+        self.rect1.center = self.position
+        self.rect2.center = self.position
+        surface.blit(rotated_image1, self.rect1)
+        surface.blit(rotated_image2, self.rect2)
