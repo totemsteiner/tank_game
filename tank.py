@@ -20,11 +20,11 @@ class tank(Sprite):
         self.turret_velocity = turret_velocity
         self.position = position
         self.angle = angle
-        self.image = pygame.image.load(image_path)
-        self.rect = self.image.get_rect()
-        self.rect.center = position
-        self.turret_image = pygame.image.load(image2_path)
-        self.turret_rect = self.turret_image.get_rect()
+        self.image1 = pygame.image.load(image_path)
+        self.rect1 = self.image1.get_rect()
+        self.rect1.center = position
+        self.image2 = pygame.image.load(image2_path)
+        self.rect2 = self.image2.get_rect()
         self.shot = False
         self.timestamp_last_shot = 0
 
@@ -49,11 +49,11 @@ class tank(Sprite):
 
 
     def draw(self, surface):
-        rotated_image = pygame.transform.rotate(self.image, -self.angle*180.0 / pi)
-        rotated_turret_image = pygame.transform.rotate(self.turret_image, -self.turret_angle*180.0 / pi)
-        rotated_rect = rotated_image.get_rect()
-        rotated_turret_rect = rotated_turret_image.get_rect()
-        rotated_rect.center = self.position
-        rotated_turret_rect.center = self.position
-        surface.blit(rotated_image, rotated_rect)
-        surface.blit(rotated_turret_image, rotated_turret_rect)
+        rotated_image1 = pygame.transform.rotate(self.image1, -self.angle*180.0 / pi)
+        rotated_image2 = pygame.transform.rotate(self.image2, -self.turret_angle*180.0 / pi)
+        rotated_rect1 = rotated_image1.get_rect()
+        rotated_rect2 = rotated_image2.get_rect()
+        rotated_rect1.center = self.position
+        rotated_rect2.center = self.position
+        surface.blit(rotated_image1, rotated_rect1)
+        surface.blit(rotated_image2, rotated_rect2)
