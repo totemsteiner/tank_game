@@ -1,5 +1,5 @@
 import pygame
-import tank_mod
+import tank
 import own_group
 import referee
 
@@ -9,8 +9,8 @@ pygame.init()
 screen = pygame.display.set_mode(SIZE)
 clock = pygame.time.Clock()
 running = True
-tank1 = tank_mod.tank(3, 5, 1, 1, 0.034, pygame.math.Vector2(512/2, 512/2), 0, 0, "tank.png", "turret.png")
-tank2 = tank_mod.tank(3, 5, 1, 1, 0.034, pygame.math.Vector2(512/2, 512/2), 0, 0, "tank.png", "turret.png")
+tank1 = tank.tank(3, 5, 1, 1, 0.034, pygame.math.Vector2(512/2, 512/2), 0, 0, "tank.png", "turret.png")
+tank2 = tank.tank(3, 5, 1, 1, 0.034, pygame.math.Vector2(512/2, 512/2), 0, 0, "tank.png", "turret.png")
 referee = referee.referee([tank1, tank2])
 all_sprite= own_group.own_group()
 all_sprite.add(tank1, tank2)
